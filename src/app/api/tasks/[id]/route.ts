@@ -4,11 +4,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (
     _: NextRequest,
-    { params }: { params: {id: string} 
-}) => {
+    { params }: { params: Promise<{ id: string }> }
+) => {
     try {
         await connectDb();
-        const task = await TaskModel.findById(params.id);
+        const task = await TaskModel.findById((await params).id);
 
         if (!task) {
             return NextResponse.json(
