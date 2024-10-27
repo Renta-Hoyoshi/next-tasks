@@ -1,7 +1,5 @@
 import EditTaskForm from "@/components/EditTaskForm/EditTaskForm"
 import { TaskDocument } from "@/models/task"
-import { GiConsoleController } from "react-icons/gi"
-import { MdFaceRetouchingOff } from "react-icons/md"
 
 interface Params {
     params: { id: string }
